@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+</head>
+<body>
+
+
+<h1>details</h1>
+<table >
+    <img src="{% static 'img/mypics/my.jpg' %}">
+
+
+{% if rp %}
+ <th>name</th>
+    <th>date</th>
+    <th>venue</th>
+    <th>manager</th>
+    <th>description</th>
+{% for r in rp %}
+    <tr>
+    <td>{{r.name}}</td>
+    <td>{{r.event_date}}</td>
+    <td>{{r.venue}}</td>
+    <td>{{r.manager}}</td>
+    <td>{{r.description}}</td>
+    </tr>
+{% endfor %}
+    {% endif%}
+</table>
+</body>
+</html>
